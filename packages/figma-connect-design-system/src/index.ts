@@ -2,9 +2,13 @@
 export * from './components/Button';
 export * from './components/Heading';
 export * from './components/Card';
+export * from './components/Box';
 
 // Design Tokens
 export * from './theme/tokens';
+
+// Sprinkles (CSS-in-TS utility)
+export { sprinkles, type Sprinkles } from './theme/sprinkles.css';
 
 // Re-export all components for convenience
 export {
@@ -20,4 +24,6 @@ export {
   type CardHeaderProps,
   type CardContentProps,
   type CardFooterProps,
+  Box,
+  type BoxProps,
 } from './components';
