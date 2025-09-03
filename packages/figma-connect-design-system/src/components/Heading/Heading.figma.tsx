@@ -1,0 +1,21 @@
+import { Heading } from "./Heading"
+import figma from "@figma/code-connect"
+
+figma.connect(
+  Heading,
+  "https://www.figma.com/design/l6oLSjlDbBAyDqlHmvtvCI/%F0%9F%93%9A-MYOBDS-%E2%80%93-MCP-TEST--DO-NOT-USE?node-id=31-116",
+  {
+    props: {
+      level: figma.enum("Level", {
+        "H1": "h1",
+        "H2": "h2",
+        "H3": "h3",
+        "H4": "h4",
+        "H5": "h5",
+        "H6": "h6",
+      }),
+      children: figma.textContent("Children"),
+    },
+    example: ({ children, ...restProps }) => <Heading {...restProps}>{children}</Heading>,
+  },
+)

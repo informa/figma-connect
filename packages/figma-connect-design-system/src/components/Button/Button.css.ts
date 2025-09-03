@@ -60,35 +60,16 @@ export const buttonVariants = styleVariants({
       transform: 'translateY(1px)',
     },
   },
-  
-  ghost: {
-    backgroundColor: 'transparent',
-    color: colors.gray[700],
-    
-    ':hover': {
-      backgroundColor: colors.gray[100],
-    },
-    
-    ':active': {
-      backgroundColor: colors.gray[200],
-    },
-  },
 });
 
 export const buttonSizes = styleVariants({
-  sm: {
+  small: {
     fontSize: typography.fontSize.sm,
     padding: `${spacing[2]} ${spacing[3]}`,
     height: '2rem',
   },
   
-  md: {
-    fontSize: typography.fontSize.base,
-    padding: `${spacing[3]} ${spacing[4]}`,
-    height: '2.5rem',
-  },
-  
-  lg: {
+  large: {
     fontSize: typography.fontSize.lg,
     padding: `${spacing[4]} ${spacing[6]}`,
     height: '3rem',

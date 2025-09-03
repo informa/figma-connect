@@ -64,21 +64,3 @@ export const headingLevels = styleVariants({
     },
   },
 });
-
-export const headingVariants = styleVariants({
-  default: {
-    color: colors.gray[900],
-  },
-  
-  primary: {
-    color: colors.primary[600],
-  },
-  
-  secondary: {
-    color: colors.gray[600],
-  },
-  
-  muted: {
-    color: colors.gray[500],
-  },
-});

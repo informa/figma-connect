@@ -17,13 +17,7 @@ export {
   Heading,
   type HeadingProps,
   Card,
-  CardHeader,
-  CardContent,
-  CardFooter,
   type CardProps,
-  type CardHeaderProps,
-  type CardContentProps,
-  type CardFooterProps,
   Box,
   type BoxProps,
 } from './components';

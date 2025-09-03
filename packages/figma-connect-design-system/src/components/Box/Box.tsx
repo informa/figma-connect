@@ -6,10 +6,11 @@ export interface BoxProps extends Sprinkles {
   as?: keyof JSX.IntrinsicElements;
   className?: string;
   style?: React.CSSProperties;
+  onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 export const Box = forwardRef<HTMLDivElement, BoxProps>(
-  ({ children, as: Component = 'div', className, style, ...sprinkleProps }, ref) => {
+  ({ children, as: Component = 'div', className, style, onClick,...sprinkleProps }, ref) => {
     const sprinkleStyles = sprinkles(sprinkleProps);
     const combinedClassName = [sprinkleStyles, className].filter(Boolean).join(' ');
 
@@ -17,6 +18,7 @@ export const Box = forwardRef<HTMLDivElement, BoxProps>(
       className: combinedClassName,
       style,
       children,
+      onClick,
     };
 
     if (Component === 'div') {

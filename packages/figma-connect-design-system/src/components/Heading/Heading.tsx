@@ -1,13 +1,11 @@
 import React from 'react';
-import { heading, headingLevels, headingVariants } from './Heading.css';
+import { heading, headingLevels } from './Heading.css';
 
 export interface HeadingProps {
   /** Heading content */
   children: React.ReactNode;
   /** Heading level */
   level?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-  /** Heading variant */
-  variant?: 'default' | 'primary' | 'secondary' | 'muted';
   /** Additional CSS class */
   className?: string;
 }
@@ -15,7 +13,6 @@ export interface HeadingProps {
 export const Heading: React.FC<HeadingProps> = ({
   children,
   level = 'h1',
-  variant = 'default',
   className,
   ...props
 }) => {
@@ -24,7 +21,6 @@ export const Heading: React.FC<HeadingProps> = ({
   const classes = [
     heading,
     headingLevels[level],
-    headingVariants[variant],
     className,
   ].filter(Boolean).join(' ');
 

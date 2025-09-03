@@ -1,5 +1,5 @@
 import { style, styleVariants } from '@vanilla-extract/css';
-import { colors, spacing, borderRadius, shadows } from '../../theme/tokens';
+import { colors, borderRadius, shadows } from '../../theme/tokens';
 
 export const card = style({
   backgroundColor: colors.white,
@@ -35,37 +35,4 @@ export const cardVariants = styleVariants({
       backgroundColor: colors.gray[50],
     },
   },
-});
-
-export const cardPadding = styleVariants({
-  none: {
-    padding: 0,
-  },
-  
-  sm: {
-    padding: spacing[4],
-  },
-  
-  md: {
-    padding: spacing[6],
-  },
-  
-  lg: {
-    padding: spacing[8],
-  },
-});
-
-export const cardHeader = style({
-  padding: spacing[6],
-  borderBottom: `1px solid ${colors.gray[200]}`,
-});
-
-export const cardContent = style({
-  padding: spacing[6],
-});
-
-export const cardFooter = style({
-  padding: spacing[6],
-  borderTop: `1px solid ${colors.gray[200]}`,
-  backgroundColor: colors.gray[50],
 });

@@ -1,12 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { 
-  Button, 
-  Heading, 
-  Card, 
-  CardHeader, 
-  CardContent, 
-  CardFooter,
+import {
+  Button,
+  Heading,
+  Card,
   Box
 } from 'figma-connect-design-system';
 import 'figma-connect-design-system/styles';
@@ -17,20 +14,20 @@ function Demo() {
       <Heading level="h1" variant="primary">
         Design System Demo - Workspace Setup
       </Heading>
-      
+
       <Box marginTop={8}>
         <Heading level="h2">Box Component with Sprinkles</Heading>
         <Box marginTop={4}>
-          <Box 
-            display="inline-flex" 
-            borderRadius="md" 
-            backgroundColor="100" 
+          <Box
+            display="inline-flex"
+            borderRadius="md"
+            backgroundColor="100"
             padding={4}
             marginBottom={4}
           >
             Box with inline-flex display and medium border radius
           </Box>
-          
+
           <Box
             display="flex"
             gap={4}
@@ -49,7 +46,7 @@ function Demo() {
               Flex Item 3
             </Box>
           </Box>
-          
+
           <Box
             as="section"
             borderWidth={2}
@@ -64,7 +61,7 @@ function Demo() {
           </Box>
         </Box>
       </Box>
-      
+
       <Box marginTop={8}>
         <Heading level="h2">Buttons</Heading>
         <Box display="flex" gap={4} marginTop={4} flexWrap="wrap">
@@ -72,14 +69,14 @@ function Demo() {
           <Button variant="secondary">Secondary</Button>
           <Button variant="ghost">Ghost</Button>
         </Box>
-        
+
         <Box display="flex" gap={4} marginTop={4} alignItems="center" flexWrap="wrap">
           <Button size="sm">Small</Button>
           <Button size="md">Medium</Button>
           <Button size="lg">Large</Button>
         </Box>
       </Box>
-      
+
       <Box marginTop={8}>
         <Heading level="h2">Headings</Heading>
         <Box marginTop={4}>
@@ -91,47 +88,30 @@ function Demo() {
           <Heading level="h6">Heading 6</Heading>
         </Box>
       </Box>
-      
+
       <Box marginTop={8}>
         <Heading level="h2">Cards</Heading>
-        <div 
-          style={{ 
-            display: 'grid', 
-            gap: '1rem', 
-            marginTop: '1rem', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' 
+        <div
+          style={{
+            display: 'grid',
+            gap: '1rem',
+            marginTop: '1rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))'
           }}
         >
-          <Card>
-            <CardHeader>
-              <Heading level="h3">Card Title</Heading>
-            </CardHeader>
-            <CardContent>
-              <p style={{ margin: 0, color: '#6b7280' }}>
-                This demo app imports from the workspace package using "figma-connect-design-system" - 
-                demonstrating how it would work as a real npm dependency!
-              </p>
-            </CardContent>
-            <CardFooter>
-              <Box display="flex" gap={2}>
-                <Button size="sm" variant="primary">
-                  Action
-                </Button>
-                <Button size="sm" variant="secondary">
-                  Cancel
-                </Button>
-              </Box>
-            </CardFooter>
-          </Card>
-          
-          <Card variant="elevated" padding="md">
-            <Box marginBottom={2}>
-              <Heading level="h4">
-                Workspace Benefits
-              </Heading>
-            </Box>
+          <Card title="Demo Card" variant="default" actions={[
+            <Button size="small" variant="primary">Action</Button>,
+            <Button size="small" variant="secondary">Cancel</Button>
+          ]}>
             <p style={{ margin: 0, color: '#6b7280' }}>
-              With workspaces, we get proper separation of concerns and can develop 
+              This demo app imports from the workspace package using "figma-connect-design-system" -
+              demonstrating how it would work as a real npm dependency!
+            </p>
+          </Card>
+
+          <Card title="Workspace Benefits" variant="elevated">
+            <p style={{ margin: 0, color: '#6b7280' }}>
+              With workspaces, we get proper separation of concerns and can develop
               against the package as if it were published to npm!
             </p>
           </Card>

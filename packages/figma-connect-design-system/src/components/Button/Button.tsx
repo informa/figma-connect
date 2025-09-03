@@ -5,11 +5,9 @@ export interface ButtonProps {
   /** Button content */
   children: React.ReactNode;
   /** Button variant */
-  variant?: 'primary' | 'secondary' | 'ghost';
+  variant?: 'primary' | 'secondary';
   /** Button size */
-  size?: 'sm' | 'md' | 'lg';
-  /** Disabled state */
-  disabled?: boolean;
+  size?: 'small' | 'large';
   /** Click handler */
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   /** Button type */
@@ -21,8 +19,7 @@ export interface ButtonProps {
 export const Button: React.FC<ButtonProps> = ({
   children,
   variant = 'primary',
-  size = 'md',
-  disabled = false,
+  size = 'large',
   onClick,
   type = 'button',
   className,
@@ -38,7 +35,6 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <button
       className={classes}
-      disabled={disabled}
       onClick={onClick}
       type={type}
       {...props}

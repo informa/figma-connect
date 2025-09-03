@@ -11,7 +11,11 @@
     "dev:demo": "npm run dev --workspace=apps/demo",
     "build:lib": "npm run build:lib --workspace=packages/figma-connect-design-system",
     "storybook": "npm run storybook --workspace=packages/figma-connect-design-system",
-    "build-storybook": "npm run build-storybook --workspace=packages/figma-connect-design-system"
+    "build-storybook": "npm run build-storybook --workspace=packages/figma-connect-design-system",
+    "figma:auth": "npm run figma:auth --workspace=packages/figma-connect-design-system",
+    "figma:connect": "npm run figma:connect --workspace=packages/figma-connect-design-system",
+    "figma:publish": "npm run figma:publish --workspace=packages/figma-connect-design-system",
+    "figma:create": "npm run figma:create --workspace=packages/figma-connect-design-system"
   },
   "devDependencies": {
     "typescript": "^5.2.2"
