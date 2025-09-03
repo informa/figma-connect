@@ -2,6 +2,9 @@
   "codeConnect": {
     "include": ["/**/*.{tsx,jsx}"],
     "label": "React",
-    "interactiveSetupFigmaFileUrl": "https://www.figma.com/design/l6oLSjlDbBAyDqlHmvtvCI/%F0%9F%93%9A-MYOBDS-%E2%80%93-MCP-TEST--DO-NOT-USE"
+    "interactiveSetupFigmaFileUrl": "https://www.figma.com/design/l6oLSjlDbBAyDqlHmvtvCI/%F0%9F%93%9A-MYOBDS-%E2%80%93-MCP-TEST--DO-NOT-USE",
+    "importPaths": {
+      "src/components/*": "figma-connect-design-system"
+    }
   }
 }
