@@ -14,8 +14,8 @@ export interface CardProps {
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
   /** Card title, a string */
   title?: string;
-  /** Card actions, an array of Button components */
-  actions?: React.ReactNode[];
+  /** Card actions, a single Button component */
+  actions?: React.ReactNode;
 }
 
 export const Card: React.FC<CardProps> = ({
@@ -49,7 +49,11 @@ export const Card: React.FC<CardProps> = ({
     >
       {title && <Heading level='h3'>{title}</Heading>}
       {children}
-      {actions && <Box display="flex" gap={4} marginTop={4}>{actions}</Box>}
+      {actions && (
+        <Box display="flex" gap={4} marginTop={4}>
+          {actions}
+        </Box>
+      )}
     </Box>
   );
 };

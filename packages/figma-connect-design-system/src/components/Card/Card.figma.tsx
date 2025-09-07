@@ -12,9 +12,17 @@ figma.connect(
         Flat: "flat",
       }),
       children: figma.textContent("Children"),
-      title: figma.instance("Heading"),
-      // actions: figma.array("Actions", figma.component("Button")),
+      title: figma.textContent("Title"),
+      actions: figma.children(["Button"]),
     },
-    example: ({children, title, ...restProps}) => <Card {...restProps}>{children}</Card>,
+    example: ({children, title, actions, ...restProps}) => (
+      <Card 
+        title={title} 
+        actions={actions} 
+        {...restProps}
+      >
+        {children}
+      </Card>
+    ),
   },
 )

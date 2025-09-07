@@ -11,7 +11,7 @@ import 'figma-connect-design-system/styles';
 function Demo() {
   return (
     <Box padding={8} style={{ maxWidth: '800px', margin: '0 auto' }}>
-      <Heading level="h1" variant="primary">
+      <Heading level="h1">
         Design System Demo - Workspace Setup
       </Heading>
 
@@ -67,7 +67,6 @@ function Demo() {
         <Box display="flex" gap={4} marginTop={4} flexWrap="wrap">
           <Button variant="primary">Primary</Button>
           <Button variant="secondary">Secondary</Button>
-          <Button variant="ghost">Ghost</Button>
         </Box>
 
         <Box display="flex" gap={4} marginTop={4} alignItems="center" flexWrap="wrap">
@@ -99,10 +98,12 @@ function Demo() {
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))'
           }}
         >
-          <Card title="Demo Card" variant="default" actions={[
-            <Button size="small" variant="primary">Action</Button>,
-            <Button size="small" variant="secondary">Cancel</Button>
-          ]}>
+          <Card title="Demo Card" variant="default" actions={
+            <>
+              <Button size="small" variant="primary">Action</Button>
+              <Button size="small" variant="secondary">Cancel</Button>
+            </>
+          }>
             <p style={{ margin: 0, color: '#6b7280' }}>
               This demo app imports from the workspace package using "figma-connect-design-system" -
               demonstrating how it would work as a real npm dependency!

@@ -14,10 +14,6 @@ const meta = {
       control: 'select',
       options: ['default', 'elevated', 'flat'],
     },
-    padding: {
-      control: 'select',
-      options: ['none', 'sm', 'md', 'lg'],
-    },
   },
 } satisfies Meta<typeof Card>;
 
@@ -67,7 +63,7 @@ export const WithActions: Story = {
         This card has a flat appearance with no shadow.
       </p>
     ),
-    actions: [<Button key="action1" variant="primary">Action 1</Button>, <Button key="action2" variant="secondary">Action 2</Button>],
+    actions: <><Button key="action1" variant="primary">Action 1</Button><Button key="action2" variant="secondary">Action 2</Button></>,
   }
 };
 
