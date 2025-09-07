@@ -12,12 +12,14 @@ figma.connect(
         Flat: "flat",
       }),
       children: figma.textContent("Children"),
-      title: figma.textContent("Title"),
+      title: figma.nestedProps('Heading', {
+        children: figma.textContent('Children'),
+      }),
       actions: figma.children(["Button"]),
     },
     example: ({children, title, actions, ...restProps}) => (
       <Card 
-        title={title} 
+        title={title.children} 
         actions={actions} 
         {...restProps}
       >
