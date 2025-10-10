@@ -1,5 +1,5 @@
 import { defineProperties, createSprinkles } from '@vanilla-extract/sprinkles';
-import { colors, spacing, borderRadius, typography, shadows } from './tokens';
+import { colors, spacing, typography } from './tokens';
 
 // Define responsive properties
 const responsiveProperties = defineProperties({
@@ -32,7 +32,11 @@ const responsiveProperties = defineProperties({
     marginBottom: spacing,
     marginLeft: spacing,
     marginRight: spacing,
-    borderRadius: borderRadius,
+    borderRadius: {
+      clear: '0',
+      sm: '0.25rem', // 4px
+      md: '0.5rem', // 8px
+    },
   },
   shorthands: {
     padding: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],
@@ -62,18 +66,19 @@ const unresponsiveProperties = defineProperties({
       black: colors.black,
     },
     backgroundColor: {
-      ...colors.primary,
-      ...colors.gray,
-      white: colors.white,
-      black: colors.black,
+      default: colors.white,
+      neutral: colors.gray[200],
+      info: '#3b82f6', // Blue color matching your design
+      warning: '#fbbf24', // Yellow color matching your design
+      danger: '#dc2626', // Red color matching the text danger color
       transparent: 'transparent',
     },
     borderColor: {
-      ...colors.primary,
-      ...colors.gray,
-      white: colors.white,
-      black: colors.black,
-      transparent: 'transparent',
+      clear: 'transparent',
+      default: colors.gray[300],
+      info: '#3b82f6', // Blue border
+      warning: '#fbbf24', // Yellow border
+      danger: '#dc2626', // Red border matching the text danger color
     },
     borderWidth: {
       0: '0',
@@ -84,8 +89,9 @@ const unresponsiveProperties = defineProperties({
     },
     borderStyle: ['solid', 'dashed', 'dotted', 'none'],
     boxShadow: {
-      ...shadows,
-      none: 'none',
+      clear: 'none',
+      weak: '0 1px 3px 0 rgb(0 0 0 / 0.1)',
+      strong: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
     },
     cursor: ['auto', 'default', 'pointer', 'wait', 'text', 'move', 'not-allowed'],
     userSelect: ['none', 'auto', 'text', 'all'],

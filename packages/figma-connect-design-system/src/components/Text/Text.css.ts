@@ -9,6 +9,27 @@ export const heading = style({
   lineHeight: typography.lineHeight.tight,
 });
 
+export const paragraph = style({
+  fontFamily: typography.fontFamily.sans.join(', '),
+  fontWeight: typography.fontWeight.normal,
+  color: colors.gray[900],
+  margin: 0,
+  fontSize: typography.fontSize.base,
+  lineHeight: typography.lineHeight.relaxed,
+});
+
+export const textColors = styleVariants({
+  default: {
+    color: colors.black,
+  },
+  neutral: {
+    color: colors.gray[600],
+  },
+  danger: {
+    color: '#dc2626', // A nice red color
+  },
+});
+
 export const headingLevels = styleVariants({
   h1: {
     fontSize: typography.fontSize['4xl'],

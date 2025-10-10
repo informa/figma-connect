@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading } from '../Heading/Heading';
+import { Text } from '../Text/Text';
 import { Box } from '../Box/Box';
 import { card, cardVariants } from './Card.css';
 
@@ -47,7 +47,7 @@ export const Card: React.FC<CardProps> = ({
       style={{ cursor: onClick ? 'pointer' : 'default' }}
       {...props}
     >
-      {title && <Heading level='h3'>{title}</Heading>}
+      {title && <Text type='h3'>{title}</Text>}
       {children}
       {actions && (
         <Box display="flex" gap={4} marginTop={4}>

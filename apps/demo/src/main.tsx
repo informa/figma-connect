@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
   Button,
-  Heading,
+  Text,
   Card,
   Box
 } from 'figma-connect-design-system';
@@ -11,85 +11,114 @@ import 'figma-connect-design-system/styles';
 function Demo() {
   return (
     <Box padding={8} style={{ maxWidth: '800px', margin: '0 auto' }}>
-      <Heading level="h1">
+      <Text type="h1">
         Design System Demo - Workspace Setup
-      </Heading>
+      </Text>
 
       <Box marginTop={8}>
-        <Heading level="h2">Box Component with Sprinkles</Heading>
-        <Box marginTop={4}>
-          <Box
-            display="inline-flex"
-            borderRadius="md"
-            backgroundColor="100"
-            padding={4}
-            marginBottom={4}
-          >
-            Box with inline-flex display and medium border radius
-          </Box>
-
-          <Box
-            display="flex"
-            gap={4}
-            padding={6}
-            backgroundColor="50"
-            borderRadius="lg"
-            marginBottom={4}
-          >
-            <Box backgroundColor="500" color="white" padding={3} borderRadius="md">
-              Flex Item 1
+        <Text type="h2">Box Component with New Properties</Text>
+        
+        {/* Background Colors */}
+        <Box marginTop={6}>
+          <Text type="h3">Background Colors</Text>
+          <Box display="flex" gap={4} marginTop={4} flexWrap="wrap">
+            <Box backgroundColor="default" padding={4} borderRadius="md" borderWidth={1} borderStyle="solid" borderColor="default">
+              Default (White)
             </Box>
-            <Box backgroundColor="600" color="white" padding={3} borderRadius="md">
-              Flex Item 2
+            <Box backgroundColor="neutral" padding={4} borderRadius="md">
+              Neutral (Gray)
             </Box>
-            <Box backgroundColor="700" color="white" padding={3} borderRadius="md">
-              Flex Item 3
+            <Box backgroundColor="info" padding={4} borderRadius="md" color="white">
+              Info (Blue)
+            </Box>
+            <Box backgroundColor="warning" padding={4} borderRadius="md" color="black">
+              Warning (Yellow)
             </Box>
           </Box>
+        </Box>
 
-          <Box
-            as="section"
-            borderWidth={2}
-            borderStyle="solid"
-            borderColor="300"
-            borderRadius="lg"
-            padding={6}
-            boxShadow="md"
-            backgroundColor="white"
-          >
-            Box rendered as a section element with borders and shadow
+        {/* Border Colors */}
+        <Box marginTop={6}>
+          <Text type="h3">Border Colors</Text>
+          <Box display="flex" gap={4} marginTop={4} flexWrap="wrap">
+            <Box backgroundColor="default" padding={4} borderRadius="md" borderWidth={2} borderStyle="solid" borderColor="clear">
+              Clear Border
+            </Box>
+            <Box backgroundColor="default" padding={4} borderRadius="md" borderWidth={2} borderStyle="solid" borderColor="default">
+              Default Border
+            </Box>
+            <Box backgroundColor="default" padding={4} borderRadius="md" borderWidth={2} borderStyle="solid" borderColor="info">
+              Info Border
+            </Box>
+            <Box backgroundColor="default" padding={4} borderRadius="md" borderWidth={2} borderStyle="solid" borderColor="warning">
+              Warning Border
+            </Box>
+          </Box>
+        </Box>
+
+        {/* Box Shadows */}
+        <Box marginTop={6}>
+          <Text type="h3">Box Shadows</Text>
+          <Box display="flex" gap={4} marginTop={4} flexWrap="wrap">
+            <Box backgroundColor="default" padding={4} borderRadius="md" boxShadow="clear">
+              Clear Shadow
+            </Box>
+            <Box backgroundColor="default" padding={4} borderRadius="md" boxShadow="weak">
+              Weak Shadow
+            </Box>
+            <Box backgroundColor="default" padding={4} borderRadius="md" boxShadow="strong">
+              Strong Shadow
+            </Box>
+          </Box>
+        </Box>
+
+        {/* Border Radius */}
+        <Box marginTop={6}>
+          <Text type="h3">Border Radius</Text>
+          <Box display="flex" gap={4} marginTop={4} flexWrap="wrap">
+            <Box backgroundColor="info" padding={4} borderRadius="clear" color="white">
+              Clear (Sharp corners)
+            </Box>
+            <Box backgroundColor="info" padding={4} borderRadius="sm" color="white">
+              Small Radius
+            </Box>
+            <Box backgroundColor="info" padding={4} borderRadius="md" color="white">
+              Medium Radius
+            </Box>
           </Box>
         </Box>
       </Box>
 
       <Box marginTop={8}>
-        <Heading level="h2">Buttons</Heading>
+        <Text type="h2">Buttons</Text>
         <Box display="flex" gap={4} marginTop={4} flexWrap="wrap">
           <Button variant="primary">Primary</Button>
           <Button variant="secondary">Secondary</Button>
         </Box>
 
         <Box display="flex" gap={4} marginTop={4} alignItems="center" flexWrap="wrap">
-          <Button size="sm">Small</Button>
-          <Button size="md">Medium</Button>
-          <Button size="lg">Large</Button>
+          <Button size="small">Small</Button>
+          <Button size="large">Large</Button>
         </Box>
       </Box>
 
       <Box marginTop={8}>
-        <Heading level="h2">Headings</Heading>
+        <Text type="h2">Text Components</Text>
         <Box marginTop={4}>
-          <Heading level="h1">Heading 1</Heading>
-          <Heading level="h2">Heading 2</Heading>
-          <Heading level="h3">Heading 3</Heading>
-          <Heading level="h4">Heading 4</Heading>
-          <Heading level="h5">Heading 5</Heading>
-          <Heading level="h6">Heading 6</Heading>
+          <Text type="h1">Heading 1</Text>
+          <Text type="h2">Heading 2</Text>
+          <Text type="h3">Heading 3</Text>
+          <Text type="h4">Heading 4</Text>
+          <Text type="h5">Heading 5</Text>
+          <Text type="h6">Heading 6</Text>
+          <Text type="paragraph">This is a paragraph showing the new Text component with paragraph type.</Text>
+          <Text type="paragraph" color="neutral">This is a neutral colored paragraph.</Text>
+          <Text type="paragraph" color="danger">This is a danger colored paragraph.</Text>
         </Box>
       </Box>
 
       <Box marginTop={8}>
-        <Heading level="h2">Cards</Heading>
+        <Text type="h2">Cards</Text>
         <div
           style={{
             display: 'grid',
@@ -104,17 +133,17 @@ function Demo() {
               <Button size="small" variant="secondary">Cancel</Button>
             </>
           }>
-            <p style={{ margin: 0, color: '#6b7280' }}>
+            <Text type="paragraph">
               This demo app imports from the workspace package using "figma-connect-design-system" -
               demonstrating how it would work as a real npm dependency!
-            </p>
+            </Text>
           </Card>
 
           <Card title="Workspace Benefits" variant="elevated">
-            <p style={{ margin: 0, color: '#6b7280' }}>
+            <Text type="paragraph">
               With workspaces, we get proper separation of concerns and can develop
               against the package as if it were published to npm!
-            </p>
+            </Text>
           </Card>
         </div>
       </Box>

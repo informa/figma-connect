@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react';
 import { sprinkles, type Sprinkles } from '../../theme/sprinkles.css';
+import { box } from './Box.css';
 
 export interface BoxProps extends Sprinkles {
   children?: React.ReactNode;
@@ -12,7 +13,7 @@ export interface BoxProps extends Sprinkles {
 export const Box = forwardRef<HTMLDivElement, BoxProps>(
   ({ children, as: Component = 'div', className, style, onClick,...sprinkleProps }, ref) => {
     const sprinkleStyles = sprinkles(sprinkleProps);
-    const combinedClassName = [sprinkleStyles, className].filter(Boolean).join(' ');
+    const combinedClassName = [box, sprinkleStyles, className].filter(Boolean).join(' ');
 
     const elementProps = {
       className: combinedClassName,

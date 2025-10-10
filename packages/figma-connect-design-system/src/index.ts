@@ -1,6 +1,6 @@
 // Design System Components
 export * from './components/Button';
-export * from './components/Heading';
+export * from './components/Text';
 export * from './components/Card';
 export * from './components/Box';
 
@@ -14,6 +14,8 @@ export { sprinkles, type Sprinkles } from './theme/sprinkles.css';
 export {
   Button,
   type ButtonProps,
+  Text,
+  type TextProps,
   Heading,
   type HeadingProps,
   Card,

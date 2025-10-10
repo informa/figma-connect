@@ -11,14 +11,11 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['primary', 'secondary', 'ghost'],
+      options: ['primary', 'secondary'],
     },
     size: {
       control: 'select',
-      options: ['sm', 'md', 'lg'],
-    },
-    disabled: {
-      control: 'boolean',
+      options: ['small', 'large'],
     },
   },
 } satisfies Meta<typeof Button>;
@@ -40,38 +37,17 @@ export const Secondary: Story = {
   },
 };
 
-export const Ghost: Story = {
-  args: {
-    children: 'Button',
-    variant: 'ghost',
-  },
-};
-
 export const Small: Story = {
   args: {
     children: 'Button',
-    size: 'sm',
-  },
-};
-
-export const Medium: Story = {
-  args: {
-    children: 'Button',
-    size: 'md',
+    size: 'small',
   },
 };
 
 export const Large: Story = {
   args: {
     children: 'Button',
-    size: 'lg',
-  },
-};
-
-export const Disabled: Story = {
-  args: {
-    children: 'Button',
-    disabled: true,
+    size: 'large',
   },
 };
 
@@ -80,7 +56,6 @@ export const AllVariants: Story = {
     <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
       <Button variant="primary">Primary</Button>
       <Button variant="secondary">Secondary</Button>
-      <Button variant="ghost">Ghost</Button>
     </div>
   ),
 };
@@ -88,9 +63,8 @@ export const AllVariants: Story = {
 export const AllSizes: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
-      <Button size="sm">Small</Button>
-      <Button size="md">Medium</Button>
-      <Button size="lg">Large</Button>
+      <Button size="small">Small</Button>
+      <Button size="large">Large</Button>
     </div>
   ),
 };

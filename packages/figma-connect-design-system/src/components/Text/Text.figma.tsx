@@ -1,8 +1,8 @@
-import { Heading } from "./Heading"
+import { Text } from "./Text"
 import figma from "@figma/code-connect"
 
 figma.connect(
-  Heading,
+  Text,
   "https://www.figma.com/design/l6oLSjlDbBAyDqlHmvtvCI/%F0%9F%93%9A-MYOBDS-%E2%80%93-MCP-TEST--DO-NOT-USE?node-id=31-116",
   {
     props: {
@@ -16,6 +16,6 @@ figma.connect(
       }),
       children: figma.textContent("Children"),
     },
-    example: ({ children, ...restProps }) => <Heading {...restProps}>{children}</Heading>,
+    example: ({ children, ...restProps }) => <Text {...restProps}>{children}</Text>,
   },
 )
