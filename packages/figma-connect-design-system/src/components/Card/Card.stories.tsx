@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Card } from './Card';
 import { Button } from '../Button';
+import { Text } from '../Text'
 
 const meta = {
   title: 'Components/Card',
@@ -24,9 +25,9 @@ export const Default: Story = {
   args: {
     title: "Card Title",
     children: (
-      <p style={{ margin: 0, color: '#6b7280' }}>
+      <Text type="paragraph">
         This is a basic card with some content inside.
-      </p>
+      </Text>
     ),
   },
 };
@@ -36,9 +37,9 @@ export const Elevated: Story = {
     title: "Elevated Card",
     variant: 'elevated',
     children: (
-      <p style={{ margin: 0, color: '#6b7280' }}>
+      <Text type="paragraph">
         This card has an elevated appearance with more shadow.
-      </p>
+      </Text>
     ),
   },
 };
@@ -48,9 +49,9 @@ export const Flat: Story = {
     title: "Flat Card",
     variant: 'flat',
     children: (
-      <p style={{ margin: 0, color: '#6b7280' }}>
+      <Text type="paragraph">
         This card has a flat appearance with no shadow.
-      </p>
+      </Text>
     ),
   },
 };
@@ -59,9 +60,9 @@ export const WithActions: Story = {
   args: {
     title: "Card with Actions",
     children: (
-      <p style={{ margin: 0, color: '#6b7280' }}>
+      <Text type="paragraph">
         This card has a flat appearance with no shadow.
-      </p>
+      </Text>
     ),
     actions: <><Button key="action1" variant="primary">Action 1</Button><Button key="action2" variant="secondary">Action 2</Button></>,
   }
@@ -72,9 +73,9 @@ export const Interactive: Story = {
     title: "Interactive Card",
     onClick: () => alert('Card clicked!'),
     children: (
-      <p style={{ margin: 0, color: '#6b7280' }}>
+      <Text type="paragraph">
         Click this card to see the interaction.
-      </p>
+      </Text>
     ),
   },
 };

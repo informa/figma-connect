@@ -28,6 +28,9 @@ export const textColors = styleVariants({
   danger: {
     color: '#dc2626', // A nice red color
   },
+  inverse: {
+    color: '#ffffff',
+  }
 });
 
 export const headingLevels = styleVariants({

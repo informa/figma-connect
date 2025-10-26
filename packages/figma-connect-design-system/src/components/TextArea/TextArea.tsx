@@ -12,6 +12,8 @@ export interface TextAreaProps extends Omit<React.TextareaHTMLAttributes<HTMLTex
   className?: string;
   /** Additional CSS class for the container */
   containerClassName?: string;
+  /** Placeholder text for the textarea */
+  placeholder?: string;
 }
 
 export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
@@ -22,6 +24,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       className,
       containerClassName,
       id,
+      placeholder,
       ...textareaProps
     },
     ref
@@ -43,6 +46,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           <textarea
             ref={ref}
             id={textareaId}
+            placeholder={placeholder}
             className={[
               textarea,
               isError ? textareaError : '',

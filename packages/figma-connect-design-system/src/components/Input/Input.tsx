@@ -12,6 +12,8 @@ export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElem
   className?: string;
   /** Additional CSS class for the container */
   containerClassName?: string;
+  /** Placeholder text for the input */
+  placeHolder?: string;
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -22,6 +24,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       className,
       containerClassName,
       id,
+      placeHolder,
       ...inputProps
     },
     ref
@@ -43,6 +46,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           <input
             ref={ref}
             id={inputId}
+            placeholder={placeHolder}
             className={[
               input,
               isError ? inputError : '',

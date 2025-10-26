@@ -7,7 +7,7 @@ export interface TextProps {
   /** Text type */
   type?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'paragraph';
   /** Text color */
-  color?: 'default' | 'neutral' | 'danger';
+  color?: 'default' | 'neutral' | 'danger' | 'inverse';
   /** Additional CSS class */
   className?: string;
 }
@@ -32,31 +32,5 @@ export const Text: React.FC<TextProps> = ({
     <Component className={classes} {...props}>
       {children}
     </Component>
-  );
-};
-
-// Backward compatibility alias for Heading
-export interface HeadingProps {
-  /** Heading content */
-  children: React.ReactNode;
-  /** Heading level */
-  level?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-  /** Text color */
-  color?: 'default' | 'neutral' | 'danger';
-  /** Additional CSS class */
-  className?: string;
-}
-
-export const Heading: React.FC<HeadingProps> = ({
-  children,
-  level = 'h1',
-  color = 'default',
-  className,
-  ...props
-}) => {
-  return (
-    <Text type={level} color={color} className={className} {...props}>
-      {children}
-    </Text>
   );
 };

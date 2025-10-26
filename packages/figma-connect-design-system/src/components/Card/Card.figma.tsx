@@ -12,7 +12,7 @@ figma.connect(
         Flat: "flat",
       }),
       children: figma.textContent("Children"),
-      title: figma.nestedProps('Heading', {
+      title: figma.nestedProps('Text', {
         children: figma.textContent('Children'),
       }),
       actions: figma.children(["Button"]),
