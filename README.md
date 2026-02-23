@@ -1,4 +1,4 @@
-# Figma Connect Design System Workspace
+# Demo Figma Connect Design System Workspace
 
 A modern design system workspace built with React, TypeScript, and Vanilla Extract using npm workspaces for proper separation of concerns.
 
