@@ -16,9 +16,10 @@ figma.connect(
         "paragraph": "paragraph"
       }),
       color: figma.enum("color", {
-        "default": "default",
-        "danger": "danger",
-        "inverse": "inverse",
+        default: "default",
+        neutral: "neutral",
+        danger: "danger",
+        inverse: "inverse",
       }),
       children: figma.textContent("Children"),
     },

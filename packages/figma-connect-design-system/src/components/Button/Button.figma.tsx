@@ -9,6 +9,7 @@ figma.connect(
       variant: figma.enum("Variant", {
         Primary: "primary",
         Secondary: "secondary",
+        Destructive: "destructive",
       }),
       size: figma.enum("Size", {
         Small: "small",

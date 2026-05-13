@@ -11,7 +11,7 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['primary', 'secondary'],
+      options: ['primary', 'secondary', 'destructive'],
     },
     size: {
       control: 'select',
@@ -37,6 +37,13 @@ export const Secondary: Story = {
   },
 };
 
+export const Destructive: Story = {
+  args: {
+    children: 'Delete',
+    variant: 'destructive',
+  },
+};
+
 export const Small: Story = {
   args: {
     children: 'Button',
@@ -56,6 +63,7 @@ export const AllVariants: Story = {
     <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
       <Button variant="primary">Primary</Button>
       <Button variant="secondary">Secondary</Button>
+      <Button variant="destructive">Destructive</Button>
     </div>
   ),
 };

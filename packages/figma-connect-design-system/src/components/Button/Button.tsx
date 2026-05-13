@@ -5,7 +5,7 @@ export interface ButtonProps {
   /** Button content */
   children: React.ReactNode;
   /** Button variant */
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'destructive';
   /** Button size */
   size?: 'small' | 'large';
   /** Click handler */

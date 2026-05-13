@@ -44,20 +44,46 @@ export const buttonVariants = styleVariants({
   },
   
   secondary: {
-    backgroundColor: colors.white,
-    color: colors.gray[700],
-    border: `1px solid ${colors.gray[300]}`,
+    backgroundColor: colors.gray[100],
+    color: colors.gray[800],
+    border: `1px solid ${colors.gray[200]}`,
     boxShadow: shadows.sm,
-    
+
     ':hover': {
-      backgroundColor: colors.gray[50],
-      borderColor: colors.gray[400],
+      backgroundColor: colors.gray[200],
+      borderColor: colors.gray[300],
       boxShadow: shadows.md,
     },
-    
+
     ':active': {
-      backgroundColor: colors.gray[100],
+      backgroundColor: colors.gray[300],
       transform: 'translateY(1px)',
+    },
+
+    ':focus': {
+      outline: `2px solid ${colors.gray[400]}`,
+      outlineOffset: '2px',
+    },
+  },
+
+  destructive: {
+    backgroundColor: colors.destructive[600],
+    color: colors.white,
+    boxShadow: shadows.sm,
+
+    ':hover': {
+      backgroundColor: colors.destructive[700],
+      boxShadow: shadows.md,
+    },
+
+    ':active': {
+      backgroundColor: colors.destructive[800],
+      transform: 'translateY(1px)',
+    },
+
+    ':focus': {
+      outline: `2px solid ${colors.destructive[500]}`,
+      outlineOffset: '2px',
     },
   },
 });

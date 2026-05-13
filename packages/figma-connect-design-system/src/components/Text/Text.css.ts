@@ -29,8 +29,8 @@ export const textColors = styleVariants({
     color: '#dc2626', // A nice red color
   },
   inverse: {
-    color: '#ffffff',
-  }
+    color: colors.gray[50],
+  },
 });
 
 export const headingLevels = styleVariants({
