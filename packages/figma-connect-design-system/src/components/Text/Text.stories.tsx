@@ -15,7 +15,7 @@ const meta = {
     },
     color: {
       control: 'select',
-      options: ['default', 'neutral', 'danger'],
+      options: ['default', 'neutral', 'danger', 'inverse'],
     },
   },
 } satisfies Meta<typeof Text>;
@@ -122,6 +122,9 @@ export const AllColors: Story = {
       <Text type="h2" color="default">Default Color Text</Text>
       <Text type="h2" color="neutral">Neutral Color Text</Text>
       <Text type="h2" color="danger">Danger Color Text</Text>
+      <div style={{ background: '#1f2937', padding: '0.75rem 1rem', borderRadius: 8 }}>
+        <Text type="h2" color="inverse">Inverse Color Text</Text>
+      </div>
       <Text type="paragraph" color="default">Default paragraph text</Text>
       <Text type="paragraph" color="neutral">Neutral paragraph text</Text>
       <Text type="paragraph" color="danger">Danger paragraph text</Text>

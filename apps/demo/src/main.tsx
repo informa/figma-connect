@@ -127,12 +127,14 @@ function Demo() {
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))'
           }}
         >
-          <Card title="Demo Card" variant="default" actions={
-            <>
-              <Button size="small" variant="primary">Action</Button>
-              <Button size="small" variant="secondary">Cancel</Button>
-            </>
-          }>
+          <Card
+            title="Demo Card"
+            variant="default"
+            actions={[
+              <Button key="go" size="small" variant="primary">Action</Button>,
+              <Button key="cancel" size="small" variant="secondary">Cancel</Button>,
+            ]}
+          >
             <Text type="paragraph">
               This demo app imports from the workspace package using "figma-connect-design-system" -
               demonstrating how it would work as a real npm dependency!
