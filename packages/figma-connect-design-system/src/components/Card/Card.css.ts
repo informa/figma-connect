@@ -1,10 +1,10 @@
 import { style, styleVariants } from '@vanilla-extract/css';
-import { colors, borderRadius, shadows } from '../../theme/tokens';
+import { shadows } from '../../theme/tokens';
 
 export const card = style({
-  backgroundColor: colors.white,
-  borderRadius: borderRadius.lg,
-  border: `1px solid ${colors.gray[200]}`,
+  backgroundColor: 'var(--color-surface)',
+  borderRadius: 'var(--radius-lg)',
+  border: '1px solid var(--color-border-subtle)',
   overflow: 'hidden',
   transition: 'all 0.2s ease-in-out',
 });
@@ -12,27 +12,27 @@ export const card = style({
 export const cardVariants = styleVariants({
   default: {
     boxShadow: shadows.sm,
-    
+
     ':hover': {
       boxShadow: shadows.md,
       transform: 'translateY(-1px)',
     },
   },
-  
+
   elevated: {
     boxShadow: shadows.md,
-    
+
     ':hover': {
       boxShadow: shadows.lg,
       transform: 'translateY(-2px)',
     },
   },
-  
+
   flat: {
     boxShadow: 'none',
-    
+
     ':hover': {
-      backgroundColor: colors.gray[50],
+      backgroundColor: 'var(--color-surface-muted)',
     },
   },
 });

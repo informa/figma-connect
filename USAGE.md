@@ -42,12 +42,10 @@ import {
   CardHeader, 
   CardContent, 
   CardFooter,
-  colors,
-  spacing,
-  typography 
+  typography,
 } from 'figma-connect-design-system';
 
-// Import the CSS (required for styling)
+// Required: compiled tokens + Vanilla Extract CSS from dist/
 import 'figma-connect-design-system/styles';
 
 function App() {
@@ -74,9 +72,9 @@ function App() {
         </CardFooter>
       </Card>
 
-      <div style={{ marginTop: spacing[4] }}>
-        <Button variant="ghost" size="lg">
-          Large Ghost Button
+      <div style={{ marginTop: 'var(--space-4)', fontFamily: typography.fontFamily.sans.join(', ') }}>
+        <Button variant="secondary" size="large">
+          Large secondary button
         </Button>
       </div>
     </div>
@@ -85,6 +83,12 @@ function App() {
 
 export default App;
 ```
+
+### Consumer contract
+
+- Use **`figma-connect-design-system`** and **`figma-connect-design-system/styles`** only (they map to **`dist/`** in `package.json` `exports`). Do not alias imports to package **source** (`src/`), so host apps avoid compiling Vanilla Extract themselves.
+- **Theming:** set `data-color-mode="dark"` and/or `data-spacing-mode="spacious"` on `<html>` for dark surfaces or a larger spacing scale.
+- **SSR:** import the styles entry in your root layout or app entry so the server-emitted HTML includes the same CSS as the client (or link `dist/style.css` in your document head).
 
 ## Available Components
 
@@ -131,21 +135,20 @@ export default App;
 </Card>
 ```
 
-## Design Tokens
+## Design tokens
 
-Access design tokens directly:
+Colors, spacing, and radii are **CSS custom properties** shipped in `figma-connect-design-system/styles` (see `packages/figma-connect-design-system/src/theme/tokens.css` in this repo). Use them in inline styles or plain CSS:
 
 ```tsx
-import { colors, spacing, typography, borderRadius, shadows } from 'figma-connect-design-system';
-
 const customStyles = {
-  color: colors.primary[600],
-  padding: spacing[4],
-  fontFamily: typography.fontFamily.sans.join(', '),
-  borderRadius: borderRadius.lg,
-  boxShadow: shadows.md,
+  color: 'var(--color-primary-600)',
+  padding: 'var(--space-4)',
+  borderRadius: 'var(--radius-lg)',
+  boxShadow: 'var(--shadow-md)',
 };
 ```
+
+From TypeScript, **`typography`** and **`shadows`** (the latter as `var(--shadow-*)` references) are exported from the package root for use in JS-driven styling.
 
 ## TypeScript Support
 

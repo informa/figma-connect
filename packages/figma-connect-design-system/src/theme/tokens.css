@@ -1,0 +1,165 @@
+/**
+ * Semantic design tokens as CSS custom properties.
+ * Default: light surfaces + compact spacing (no data attributes on :root).
+ * Dark surfaces: :root[data-color-mode="dark"]
+ * Spacious spacing: :root[data-spacing-mode="spacious"]
+ *
+ * Align variable names with Figma Variables when exporting from Figma.
+ */
+:root {
+  /* —— Spacing (compact) —— */
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* —— Radius —— */
+  --radius-none: 0;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+
+  /* —— Base —— */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* —— Gray scale —— */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* —— Primary —— */
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+
+  /* —— Destructive —— */
+  --color-destructive-50: #fef2f2;
+  --color-destructive-100: #fee2e2;
+  --color-destructive-200: #fecaca;
+  --color-destructive-300: #fca5a5;
+  --color-destructive-400: #f87171;
+  --color-destructive-500: #ef4444;
+  --color-destructive-600: #dc2626;
+  --color-destructive-700: #b91c1c;
+  --color-destructive-800: #991b1b;
+  --color-destructive-900: #7f1d1d;
+
+  /* —— Semantic surfaces & text —— */
+  --color-surface: var(--color-white);
+  --color-surface-muted: var(--color-gray-50);
+  --color-surface-subtle: var(--color-gray-100);
+  --color-border-default: var(--color-gray-300);
+  --color-border-subtle: var(--color-gray-200);
+  --color-text-primary: var(--color-gray-900);
+  --color-text-muted: var(--color-gray-600);
+  --color-text-placeholder: var(--color-gray-500);
+  --color-text-label: var(--color-gray-700);
+  /* Light text on dark UI (not tied to the gray ramp, which flips in dark mode) */
+  --color-text-inverse: #f9fafb;
+  --color-text-danger: var(--color-destructive-600);
+
+  /* —— Semantic fills (sprinkles / Box) —— */
+  --color-bg-default: var(--color-surface);
+  --color-bg-neutral: var(--color-gray-200);
+  --color-bg-info: var(--color-primary-500);
+  --color-bg-warning: #fbbf24;
+  --color-bg-danger: var(--color-destructive-600);
+
+  --color-border-info: var(--color-primary-500);
+  --color-border-warning: #fbbf24;
+  --color-border-danger: var(--color-destructive-600);
+
+  /* —— Focus / rings —— */
+  --color-focus-outline-primary: var(--color-primary-500);
+  --color-focus-outline-neutral: var(--color-gray-400);
+  --color-focus-outline-destructive: var(--color-destructive-500);
+  --color-focus-ring-info: rgb(59 130 246 / 0.1);
+  --color-focus-ring-danger: rgb(220 38 38 / 0.1);
+
+  /* —— Shadows —— */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-base: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-weak: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  --shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* Spacious spacing scale (~1.5× compact) */
+:root[data-spacing-mode='spacious'] {
+  --space-1: 0.375rem;
+  --space-2: 0.75rem;
+  --space-3: 1.125rem;
+  --space-4: 1.5rem;
+  --space-5: 1.875rem;
+  --space-6: 2.25rem;
+  --space-8: 3rem;
+  --space-10: 3.75rem;
+  --space-12: 4.5rem;
+  --space-16: 6rem;
+  --space-20: 7.5rem;
+  --space-24: 9rem;
+}
+
+/* Dark color overrides (surfaces + inverted gray ramp for text/borders) */
+:root[data-color-mode='dark'] {
+  --color-surface: #111827;
+  --color-surface-muted: #1f2937;
+  --color-surface-subtle: #374151;
+
+  --color-gray-50: #111827;
+  --color-gray-100: #1f2937;
+  --color-gray-200: #374151;
+  --color-gray-300: #4b5563;
+  --color-gray-400: #6b7280;
+  --color-gray-500: #9ca3af;
+  --color-gray-600: #d1d5db;
+  --color-gray-700: #e5e7eb;
+  --color-gray-800: #f3f4f6;
+  --color-gray-900: #f9fafb;
+
+  --color-text-primary: var(--color-gray-900);
+  --color-text-muted: var(--color-gray-500);
+  --color-text-placeholder: var(--color-gray-500);
+  --color-text-label: var(--color-gray-700);
+  --color-text-inverse: #f3f4f6;
+
+  --color-border-default: var(--color-gray-300);
+  --color-border-subtle: var(--color-gray-200);
+
+  --color-bg-default: var(--color-surface);
+  --color-bg-neutral: var(--color-gray-200);
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.35);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.45), 0 2px 4px -2px rgb(0 0 0 / 0.35);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.45), 0 4px 6px -4px rgb(0 0 0 / 0.35);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 / 0.4);
+  --shadow-base: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.35);
+  --shadow-weak: 0 1px 3px 0 rgb(0 0 0 / 0.35);
+  --shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.45), 0 4px 6px -4px rgb(0 0 0 / 0.35);
+}

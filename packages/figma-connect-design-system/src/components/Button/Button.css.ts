@@ -1,5 +1,5 @@
 import { style, styleVariants } from '@vanilla-extract/css';
-import { colors, spacing, borderRadius, typography, shadows } from '../../theme/tokens';
+import { shadows, typography } from '../../theme/tokens';
 
 export const button = style({
   display: 'inline-flex',
@@ -7,19 +7,19 @@ export const button = style({
   justifyContent: 'center',
   fontFamily: typography.fontFamily.sans.join(', '),
   fontWeight: typography.fontWeight.medium,
-  borderRadius: borderRadius.md,
+  borderRadius: 'var(--radius-md)',
   border: 'none',
   cursor: 'pointer',
   textDecoration: 'none',
   transition: 'all 0.2s ease-in-out',
   outline: 'none',
   userSelect: 'none',
-  
+
   ':focus': {
-    outline: `2px solid ${colors.primary[500]}`,
+    outline: '2px solid var(--color-focus-outline-primary)',
     outlineOffset: '2px',
   },
-  
+
   ':disabled': {
     opacity: 0.5,
     cursor: 'not-allowed',
@@ -28,61 +28,61 @@ export const button = style({
 
 export const buttonVariants = styleVariants({
   primary: {
-    backgroundColor: colors.primary[600],
-    color: colors.white,
+    backgroundColor: 'var(--color-primary-600)',
+    color: 'var(--color-white)',
     boxShadow: shadows.sm,
-    
+
     ':hover': {
-      backgroundColor: colors.primary[700],
+      backgroundColor: 'var(--color-primary-700)',
       boxShadow: shadows.md,
     },
-    
+
     ':active': {
-      backgroundColor: colors.primary[800],
+      backgroundColor: 'var(--color-primary-800)',
       transform: 'translateY(1px)',
     },
   },
-  
+
   secondary: {
-    backgroundColor: colors.gray[100],
-    color: colors.gray[800],
-    border: `1px solid ${colors.gray[200]}`,
+    backgroundColor: 'var(--color-gray-100)',
+    color: 'var(--color-gray-800)',
+    border: '1px solid var(--color-gray-200)',
     boxShadow: shadows.sm,
 
     ':hover': {
-      backgroundColor: colors.gray[200],
-      borderColor: colors.gray[300],
+      backgroundColor: 'var(--color-gray-200)',
+      borderColor: 'var(--color-gray-300)',
       boxShadow: shadows.md,
     },
 
     ':active': {
-      backgroundColor: colors.gray[300],
+      backgroundColor: 'var(--color-gray-300)',
       transform: 'translateY(1px)',
     },
 
     ':focus': {
-      outline: `2px solid ${colors.gray[400]}`,
+      outline: '2px solid var(--color-focus-outline-neutral)',
       outlineOffset: '2px',
     },
   },
 
   destructive: {
-    backgroundColor: colors.destructive[600],
-    color: colors.white,
+    backgroundColor: 'var(--color-destructive-600)',
+    color: 'var(--color-white)',
     boxShadow: shadows.sm,
 
     ':hover': {
-      backgroundColor: colors.destructive[700],
+      backgroundColor: 'var(--color-destructive-700)',
       boxShadow: shadows.md,
     },
 
     ':active': {
-      backgroundColor: colors.destructive[800],
+      backgroundColor: 'var(--color-destructive-800)',
       transform: 'translateY(1px)',
     },
 
     ':focus': {
-      outline: `2px solid ${colors.destructive[500]}`,
+      outline: '2px solid var(--color-focus-outline-destructive)',
       outlineOffset: '2px',
     },
   },
@@ -91,13 +91,13 @@ export const buttonVariants = styleVariants({
 export const buttonSizes = styleVariants({
   small: {
     fontSize: typography.fontSize.sm,
-    padding: `${spacing[2]} ${spacing[3]}`,
+    padding: `var(--space-2) var(--space-3)`,
     height: '2rem',
   },
-  
+
   large: {
     fontSize: typography.fontSize.lg,
-    padding: `${spacing[4]} ${spacing[6]}`,
+    padding: `var(--space-4) var(--space-6)`,
     height: '3rem',
   },
 });

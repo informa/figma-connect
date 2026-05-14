@@ -112,7 +112,7 @@ Flexible card component with optional header, content, and footer sections.
 **Variants**: `default`, `elevated`, `flat`  
 **Padding**: `none`, `sm`, `md`, `lg`
 
-## � Usage Example
+## Usage example
 
 In any app within the workspace (or external projects):
 
@@ -152,19 +152,15 @@ function App() {
 }
 ```
 
-## 🎨 Design Tokens
+## Consuming the package (consumer contract)
 
-Access design tokens directly:
+- Import **components and utilities from the package root** and **styles from the `styles` export**. Both resolve to built files under `dist/` via `package.json` `exports`. Do **not** point your bundler or TypeScript at `packages/figma-connect-design-system/src` (no deep imports into source). Host apps should **not** add `@vanilla-extract/vite-plugin` (or equivalent) for this dependency: styling ships as precompiled `dist/style.css`.
+- **Theming:** set `data-color-mode="dark"` and/or `data-spacing-mode="spacious"` on `document.documentElement` (or the SSR HTML `<html>` element). Defaults are light surfaces and compact spacing when those attributes are absent. Color and spacing in components and sprinkles read from CSS custom properties defined in the published stylesheet (see `src/theme/tokens.css` in the repo; names are intended to align with Figma Variables).
+- **SSR and static rendering:** include the stylesheet once per document (for example `import 'figma-connect-design-system/styles'` in your app shell or root layout) so tokens and Vanilla Extract output load before paint. In SSR frameworks, ensure the same CSS is part of the server render (typically by importing the styles module in a file that runs on both server and client, or by linking `dist/style.css` in your HTML template).
 
-```tsx
-import { colors, spacing, typography } from 'figma-connect-design-system';
+## Design tokens
 
-const customStyles = {
-  color: colors.primary[600],
-  padding: spacing[4],
-  fontFamily: typography.fontFamily.sans.join(', '),
-};
-```
+Runtime **color, spacing, and radius** values live in CSS (for example `var(--color-primary-600)`, `var(--space-4)`, `var(--radius-md)`). TypeScript exports **`typography`** and **`shadows`** (shadows reference the same CSS variables). For layout and utilities, use **`sprinkles`** from the package root.
 
 ## 🔧 Workspace Benefits
 
@@ -181,7 +177,7 @@ The `figma-connect-design-system` package generates:
 - `dist/index.js` - CommonJS build
 - `dist/index.es.js` - ES modules build  
 - `dist/index.d.ts` - TypeScript declarations
-- `dist/style.css` - Compiled CSS
+- `dist/style.css` - CSS custom properties (`tokens.css`) plus compiled Vanilla Extract (components, sprinkles, global reset)
 
 ## 🔧 Technologies
 

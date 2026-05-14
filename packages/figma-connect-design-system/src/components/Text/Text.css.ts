@@ -1,10 +1,10 @@
 import { style, styleVariants } from '@vanilla-extract/css';
-import { colors, typography } from '../../theme/tokens';
+import { typography } from '../../theme/tokens';
 
 export const heading = style({
   fontFamily: typography.fontFamily.sans.join(', '),
   fontWeight: typography.fontWeight.semibold,
-  color: colors.gray[900],
+  color: 'var(--color-text-primary)',
   margin: 0,
   lineHeight: typography.lineHeight.tight,
 });
@@ -12,7 +12,7 @@ export const heading = style({
 export const paragraph = style({
   fontFamily: typography.fontFamily.sans.join(', '),
   fontWeight: typography.fontWeight.normal,
-  color: colors.gray[900],
+  color: 'var(--color-text-primary)',
   margin: 0,
   fontSize: typography.fontSize.base,
   lineHeight: typography.lineHeight.relaxed,
@@ -20,16 +20,16 @@ export const paragraph = style({
 
 export const textColors = styleVariants({
   default: {
-    color: colors.black,
+    color: 'var(--color-text-primary)',
   },
   neutral: {
-    color: colors.gray[600],
+    color: 'var(--color-text-muted)',
   },
   danger: {
-    color: '#dc2626', // A nice red color
+    color: 'var(--color-text-danger)',
   },
   inverse: {
-    color: colors.gray[50],
+    color: 'var(--color-text-inverse)',
   },
 });
 
@@ -42,7 +42,7 @@ export const headingLevels = styleVariants({
       },
     },
   },
-  
+
   h2: {
     fontSize: typography.fontSize['3xl'],
     '@media': {
@@ -51,7 +51,7 @@ export const headingLevels = styleVariants({
       },
     },
   },
-  
+
   h3: {
     fontSize: typography.fontSize['2xl'],
     '@media': {
@@ -60,7 +60,7 @@ export const headingLevels = styleVariants({
       },
     },
   },
-  
+
   h4: {
     fontSize: typography.fontSize.xl,
     '@media': {
@@ -69,7 +69,7 @@ export const headingLevels = styleVariants({
       },
     },
   },
-  
+
   h5: {
     fontSize: typography.fontSize.lg,
     '@media': {
@@ -78,7 +78,7 @@ export const headingLevels = styleVariants({
       },
     },
   },
-  
+
   h6: {
     fontSize: typography.fontSize.base,
     '@media': {
