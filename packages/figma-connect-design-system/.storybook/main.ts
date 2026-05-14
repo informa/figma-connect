@@ -17,6 +17,10 @@ const config: StorybookConfig = {
   viteFinal: async (config) => {
     const { vanillaExtractPlugin } = await import('@vanilla-extract/vite-plugin');
     config.plugins?.push(vanillaExtractPlugin());
+    const base = process.env.GITHUB_PAGES_BASE?.trim();
+    if (base) {
+      config.base = base.endsWith('/') ? base : `${base}/`;
+    }
     return config;
   },
 };
