@@ -1,4 +1,5 @@
 import React from 'react';
+import type { ButtonProps } from '../Button';
 import { Text } from '../Text/Text';
 import { Box } from '../Box/Box';
 import { card, cardVariants } from './Card.css';
@@ -14,8 +15,8 @@ export interface CardProps {
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
   /** Card title, a string */
   title?: string;
-  /** Card actions, a single Button component */
-  actions?: React.ReactNode;
+  /** Footer actions — use one or more `<Button />` elements */
+  actions?: Array<React.ReactElement<ButtonProps>>;
 }
 
 export const Card: React.FC<CardProps> = ({
@@ -49,9 +50,13 @@ export const Card: React.FC<CardProps> = ({
     >
       {title && <Text type='h3'>{title}</Text>}
       {children}
-      {actions && (
-        <Box display="flex" gap={4} marginTop={4}>
-          {actions}
+      {actions && actions.length > 0 && (
+        <Box display="flex" flexWrap="wrap" gap={4} marginTop={4}>
+          {actions.map((action, index) =>
+            React.cloneElement(action, {
+              key: action.key ?? `card-action-${index}`,
+            }),
+          )}
         </Box>
       )}
     </Box>

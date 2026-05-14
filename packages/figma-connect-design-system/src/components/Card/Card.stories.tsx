@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 import { Card } from './Card';
 import { Button } from '../Button';
 import { Text } from '../Text'
@@ -64,7 +65,10 @@ export const WithActions: Story = {
         This card has a flat appearance with no shadow.
       </Text>
     ),
-    actions: <><Button key="action1" variant="primary">Action 1</Button><Button key="action2" variant="secondary">Action 2</Button></>,
+    actions: [
+      <Button key="action1" variant="primary">Action 1</Button>,
+      <Button key="action2" variant="secondary">Action 2</Button>,
+    ],
   }
 };
 

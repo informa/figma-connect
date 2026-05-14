@@ -1,3 +1,5 @@
+import type { ReactElement } from "react"
+import type { ButtonProps } from "../Button"
 import { Card } from "./Card"
 import figma from "@figma/code-connect"
 
@@ -12,15 +14,21 @@ figma.connect(
         Flat: "flat",
       }),
       children: figma.textContent("Children"),
-      title: figma.nestedProps('Text', {
-        children: figma.textContent('Children'),
+      title: figma.nestedProps("Text", {
+        children: figma.textContent("Children"),
       }),
       actions: figma.children(["Button"]),
     },
-    example: ({children, title, actions, ...restProps}) => (
-      <Card 
-        title={title.children} 
-        actions={actions} 
+    example: ({ children, title, actions, ...restProps }) => (
+      <Card
+        title={title.children}
+        actions={
+          (actions == null
+            ? undefined
+            : (Array.isArray(actions) ? actions : [actions])) as Array<
+            ReactElement<ButtonProps>
+          >
+        }
         {...restProps}
       >
         {children}
