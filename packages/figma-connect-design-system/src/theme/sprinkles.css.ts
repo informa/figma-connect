@@ -1,6 +1,20 @@
 import { defineProperties, createSprinkles } from '@vanilla-extract/sprinkles';
-import { colors, spacing, typography } from './tokens';
+import { typography } from './tokens';
 
+const scaleKeys = [0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24] as const;
+const spacing = Object.fromEntries(scaleKeys.map((k) => [k, `var(--space-${k})`])) as Record<
+  (typeof scaleKeys)[number],
+  string
+>;
+
+const toneKeys = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900] as const;
+const primaryColors = Object.fromEntries(
+  toneKeys.map((k) => [k, `var(--color-primary-${k})`])
+) as Record<(typeof toneKeys)[number], string>;
+const grayColors = Object.fromEntries(toneKeys.map((k) => [k, `var(--color-gray-${k})`])) as Record<
+  (typeof toneKeys)[number],
+  string
+>;
 // Define responsive properties
 const responsiveProperties = defineProperties({
   conditions: {
@@ -33,9 +47,9 @@ const responsiveProperties = defineProperties({
     marginLeft: spacing,
     marginRight: spacing,
     borderRadius: {
-      clear: '0',
-      sm: '0.25rem', // 4px
-      md: '0.5rem', // 8px
+      clear: 'var(--radius-none)',
+      sm: 'var(--radius-sm)',
+      md: 'var(--radius-md)',
     },
   },
   shorthands: {
@@ -59,28 +73,29 @@ const unresponsiveProperties = defineProperties({
     fontSize: typography.fontSize,
     fontWeight: typography.fontWeight,
     lineHeight: typography.lineHeight,
+    /* Numeric keys match the previous spread order (gray overrides primary for 50–900). */
     color: {
-      ...colors.primary,
-      ...colors.gray,
-      white: colors.white,
-      black: colors.black,
+      ...primaryColors,
+      ...grayColors,
+      white: 'var(--color-white)',
+      black: 'var(--color-black)',
     },
     backgroundColor: {
-      default: colors.white,
-      neutral: colors.gray[200],
-      info: '#3b82f6', // Blue color matching your design
-      warning: '#fbbf24', // Yellow color matching your design
-      danger: colors.destructive[600],
-      red: colors.destructive[600],
+      default: 'var(--color-bg-default)',
+      neutral: 'var(--color-bg-neutral)',
+      info: 'var(--color-bg-info)',
+      warning: 'var(--color-bg-warning)',
+      danger: 'var(--color-bg-danger)',
+      red: 'var(--color-bg-danger)',
       transparent: 'transparent',
     },
     borderColor: {
       clear: 'transparent',
-      default: colors.gray[300],
-      info: '#3b82f6', // Blue border
-      warning: '#fbbf24', // Yellow border
-      danger: colors.destructive[600],
-      red: colors.destructive[600],
+      default: 'var(--color-border-default)',
+      info: 'var(--color-border-info)',
+      warning: 'var(--color-border-warning)',
+      danger: 'var(--color-border-danger)',
+      red: 'var(--color-border-danger)',
     },
     borderWidth: {
       0: '0',
@@ -92,8 +107,8 @@ const unresponsiveProperties = defineProperties({
     borderStyle: ['solid', 'dashed', 'dotted', 'none'],
     boxShadow: {
       clear: 'none',
-      weak: '0 1px 3px 0 rgb(0 0 0 / 0.1)',
-      strong: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+      weak: 'var(--shadow-weak)',
+      strong: 'var(--shadow-strong)',
     },
     cursor: ['auto', 'default', 'pointer', 'wait', 'text', 'move', 'not-allowed'],
     userSelect: ['none', 'auto', 'text', 'all'],
@@ -107,8 +122,8 @@ const unresponsiveProperties = defineProperties({
       50: '50',
       auto: 'auto',
     },
-    width: ['auto', 'full', 'fit-content', 'max-content', 'min-content'],
-    height: ['auto', 'full', 'fit-content', 'max-content', 'min-content'],
+    width: ['auto', '100%', 'fit-content', 'max-content', 'min-content'],
+    height: ['auto', '100%', 'fit-content', 'max-content', 'min-content'],
     minWidth: spacing,
     minHeight: spacing,
     maxWidth: spacing,

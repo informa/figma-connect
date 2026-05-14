@@ -14,8 +14,8 @@ globalStyle('html', {
 globalStyle('body', {
   margin: 0,
   padding: 0,
-  backgroundColor: '#ffffff',
-  color: '#111827',
+  backgroundColor: 'var(--color-surface)',
+  color: 'var(--color-text-primary)',
 });
 
 globalStyle('h1, h2, h3, h4, h5, h6', {

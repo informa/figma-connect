@@ -1,10 +1,10 @@
 import { style } from '@vanilla-extract/css';
-import { colors, typography } from '../../theme/tokens';
+import { typography } from '../../theme/tokens';
 
 export const textareaContainer = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: '0.5rem', // 8px
+  gap: 'var(--space-2)',
   width: '100%',
 });
 
@@ -15,33 +15,33 @@ export const textareaWrapper = style({
 
 export const textarea = style({
   width: '100%',
-  padding: '0.75rem', // 12px
+  padding: 'var(--space-3)',
   fontSize: typography.fontSize.base,
   lineHeight: typography.lineHeight.normal,
-  color: colors.gray[900],
-  backgroundColor: colors.white,
-  border: `1px solid ${colors.gray[300]}`,
-  borderRadius: '0.5rem', // 8px to match Box md border radius
+  color: 'var(--color-text-primary)',
+  backgroundColor: 'var(--color-surface)',
+  border: '1px solid var(--color-border-default)',
+  borderRadius: 'var(--radius-lg)',
   outline: 'none',
   transition: 'border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out',
   resize: 'vertical',
   minHeight: '80px',
-  
+
   '::placeholder': {
-    color: colors.gray[500],
+    color: 'var(--color-text-placeholder)',
   },
-  
+
   ':focus': {
-    borderColor: '#3b82f6', // info color to match Box
-    boxShadow: '0 0 0 3px rgb(59 130 246 / 0.1)',
+    borderColor: 'var(--color-primary-500)',
+    boxShadow: '0 0 0 3px var(--color-focus-ring-info)',
   },
 });
 
 export const textareaError = style({
-  borderColor: '#dc2626', // danger color to match Box and Text
-  
+  borderColor: 'var(--color-destructive-600)',
+
   ':focus': {
-    borderColor: '#dc2626',
-    boxShadow: '0 0 0 3px rgb(220 38 38 / 0.1)',
+    borderColor: 'var(--color-destructive-600)',
+    boxShadow: '0 0 0 3px var(--color-focus-ring-danger)',
   },
 });
