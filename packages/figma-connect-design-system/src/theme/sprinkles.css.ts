@@ -70,7 +70,8 @@ const unresponsiveProperties = defineProperties({
       neutral: colors.gray[200],
       info: '#3b82f6', // Blue color matching your design
       warning: '#fbbf24', // Yellow color matching your design
-      danger: '#dc2626', // Red color matching the text danger color
+      danger: colors.destructive[600],
+      red: colors.destructive[600],
       transparent: 'transparent',
     },
     borderColor: {
@@ -78,7 +79,8 @@ const unresponsiveProperties = defineProperties({
       default: colors.gray[300],
       info: '#3b82f6', // Blue border
       warning: '#fbbf24', // Yellow border
-      danger: '#dc2626', // Red border matching the text danger color
+      danger: colors.destructive[600],
+      red: colors.destructive[600],
     },
     borderWidth: {
       0: '0',

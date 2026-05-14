@@ -8,9 +8,10 @@ figma.connect(
     props: {
       backgroundColor: figma.enum("background", {
         default: "default",
-        neutral: "neutral", 
+        neutral: "neutral",
         info: "info",
         warning: "warning",
+        danger: "danger",
       }),
       borderRadius: figma.enum("borderRadius", {
         clear: "clear",

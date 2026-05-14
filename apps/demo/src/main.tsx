@@ -94,11 +94,15 @@ function Demo() {
         <Box display="flex" gap={4} marginTop={4} flexWrap="wrap">
           <Button variant="primary">Primary</Button>
           <Button variant="secondary">Secondary</Button>
+          <Button variant="destructive">Destructive</Button>
         </Box>
 
         <Box display="flex" gap={4} marginTop={4} alignItems="center" flexWrap="wrap">
           <Button size="small">Small</Button>
           <Button size="large">Large</Button>
+          <Button size="small" variant="destructive">
+            Delete
+          </Button>
         </Box>
       </Box>
 
@@ -133,6 +137,7 @@ function Demo() {
             actions={[
               <Button key="go" size="small" variant="primary">Action</Button>,
               <Button key="cancel" size="small" variant="secondary">Cancel</Button>,
+              <Button key="remove" size="small" variant="destructive">Remove</Button>,
             ]}
           >
             <Text type="paragraph">

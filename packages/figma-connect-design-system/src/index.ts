@@ -16,8 +16,6 @@ export {
   type ButtonProps,
   Text,
   type TextProps,
-  Heading,
-  type HeadingProps,
   Card,
   type CardProps,
   Box,
